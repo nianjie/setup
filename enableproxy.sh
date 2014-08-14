@@ -23,10 +23,27 @@ echo "This script requires superuser access to set up proxy environment for sudo
 echo "You will be prompted for your password by sudo."
 
 # clear any previous sudo permission
-#sudo -k
+sudo -k
 
 # run inside sudo
-#sudo sh <<SCRIPT
-  
+sudo VARIABLE_NAME_LIST="http_proxy ftp_proxy https_proxy" sh -xv <<SCRIPT
+  V_NAME=
+  PROXY_FLG=
+
   # already available?
-#  if [[ 
+for V_NAME in $VARIABLE_NAME_LIST ; do
+    eval V_VALUE='$'$V_NAME
+    if [ -n "$V_VALUE" ] ; then
+	 PROXY_FLG="T"
+    fi
+done
+
+  if [ "$PROXY_FLG" = "T" ] ; then
+	 echo "The proxy environment has been set up already."
+	 return 0
+  else
+	 echo "The proxy environment is goinig to set up."
+
+  fi
+
+SCRIPT 
