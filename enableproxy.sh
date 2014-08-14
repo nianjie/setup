@@ -3,10 +3,12 @@
 
 # fist check if there is any varialbe related to proxy 
 VARIABLE_NAME_LIST="http_proxy ftp_proxy https_proxy"
+V_NAME=
 PROXY_FLG=
 
-for PROXY_FLG in $VARIABLE_NAME_LIST ; do
-    if [ -n "$PROXY_FLG" ] ; then
+for V_NAME in $VARIABLE_NAME_LIST ; do
+    eval V_VALUE='$'$V_NAME
+    if [ -n "$V_VALUE" ] ; then
 	 PROXY_FLG="T"
     fi
 done
