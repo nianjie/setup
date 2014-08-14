@@ -3,14 +3,15 @@
 
 # fist check if there is any varialbe related to proxy 
 VARIABLE_NAME_LIST="http_proxy ftp_proxy https_proxy"
+PROXY_FLG=
 
 for PROXY_FLG in $VARIABLE_NAME_LIST ; do
-    if [[ "$PFOX_FLG" != "" ]]; then
-	 PROXY_FLG="TRUE"
+    if [ -n "$PROXY_FLG" ] ; then
+	 PROXY_FLG="T"
     fi
 done
 
-if [[ "$PROXY_FLG"!="TRUE" ]] ; then 
+if [ "$PROXY_FLG" != "T" ] ; then 
     echo "There is no proxy environment in the sysmte."
     echo "This script will stop."
     return 1
