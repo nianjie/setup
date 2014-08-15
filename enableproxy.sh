@@ -48,6 +48,12 @@ done
 		echo "This script will not work without appropriate configuration."
 		return 1
 	 fi
+	 if [ ! -f /etc/sudoers.d/00_custenv ] ; then
+		 cat >/etc/sudoers.d/00_custenv <<-CUSTENV
+			Defaults env_keep += \"$VARIABLE_NAME_LIST\"
+		 CUSTENV
+		 echo "The sudoers is appended."
+	 fi
   fi
 
 SCRIPT
