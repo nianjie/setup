@@ -32,7 +32,7 @@ sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 # that are invoked through command sudo, because which remove 
 # almost all of environment variables.
 if [ -f ./setup/enableproxy.sh ]; then 
-    sudo sh ./setup/enableproxy.sh
+    . ./setup/enableproxy.sh
 fi
 # https://toolbelt.heroku.com/debian
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
