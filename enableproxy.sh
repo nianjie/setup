@@ -43,7 +43,11 @@ done
 	 return 0
   else
 	 echo "The proxy environment is goinig to set up."
-
+	 if [ ! -d /etc/sudoers.d/ ] ; then
+		echo "The system seems have not been configured for sudoers inclusion."
+		echo "This script will not work without appropriate configuration."
+		return 1
+	 fi
   fi
 
 SCRIPT
