@@ -49,9 +49,7 @@ done
 		return 1
 	 fi
 	 if [ ! -f /etc/sudoers.d/00_custenv ] ; then
-		 cat >/etc/sudoers.d/00_custenv <<-CUSTENV
-			Defaults env_keep += \"$VARIABLE_NAME_LIST\"
-		 CUSTENV
+		 echo "Defaults env_keep += \"$VARIABLE_NAME_LIST\"" > /etc/sudoers.d/00_custenv 
 		 echo "The sudoers is appended."
 	 fi
   fi
