@@ -9,7 +9,7 @@ if [ -d ./$BACKUP_DIR_NAME ] ; then
 fi
 
 /bin/mkdir $BACKUP_DIR_NAME && {
-  for DOT_FILE in ".[^.]*" ; do
+  for DOT_FILE in .[!.]* ; do
     echo $DOT_FILE 
   done
 }
