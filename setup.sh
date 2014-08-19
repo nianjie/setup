@@ -39,6 +39,10 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # git pull and install dotfiles as well
 cd $HOME
+# backup dot files forcefully in dotfiles directory
+if [ -f ./setup/backdots.sh ] ; then
+    . ./setup/backdots.sh
+fi
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
