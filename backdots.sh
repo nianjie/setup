@@ -11,8 +11,8 @@ fi
 
 /bin/mkdir $BACKUP_DIR_NAME && {
   for DOT_FILE in .[!.]* ; do
-    DOT_FILE_COUNTER=$(($DOT_FILE_COUNTER+1))
     if [ -f $DOT_FILE ] ; then
+        DOT_FILE_COUNTER=$(($DOT_FILE_COUNTER+1))
     	cp "$DOT_FILE" "./$BACKUP_DIR_NAME" >/dev/null 2>&1 \
 	   || echo "$DOT_FILE: backup failed."
     fi
