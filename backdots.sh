@@ -22,6 +22,6 @@ fi
   done
   echo "All dotfiles: $DOT_FILE_COUNTER."
   if [ $FAILED_COUNTER -gt 0 ] ; then 
-	  echo "$FAILED_COUNTER file(s) failed on backup: $FAILED_FILE_LIST."
+	  echo "$FAILED_COUNTER file(s) failed on backup: ${FAILED_FILE_LIST#,\ }."
   fi
 }
