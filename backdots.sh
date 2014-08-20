@@ -12,7 +12,7 @@ fi
   for DOT_FILE in .[!.]* ; do
     echo $DOT_FILE
     if [ -f $DOT_FILE ] ; then
-	    cp "$DOT_FILE" "./$BACKUP_DIR_NAME"
+    	cp "$DOT_FILE" "./$BACKUP_DIR_NAME" >/dev/null 2>&1
     fi
   done
 }
