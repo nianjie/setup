@@ -10,6 +10,9 @@ fi
 
 /bin/mkdir $BACKUP_DIR_NAME && {
   for DOT_FILE in .[!.]* ; do
-    echo $DOT_FILE 
+    echo $DOT_FILE
+    if [ -f $DOT_FILE ] ; then
+	    cp "$DOT_FILE" "./$BACKUP_DIR_NAME"
+    fi
   done
 }
