@@ -17,11 +17,11 @@ fi
         DOT_FILE_COUNTER=$(($DOT_FILE_COUNTER+1))
     	cp "$DOT_FILE" "./$BACKUP_DIR_NAME" >/dev/null 2>&1  || \
 		{ FAILED_COUNTER=$(($FAILED_COUNTER+1))         \
-        	FAILED_FILE_LIST="$FAILED_FILE_LIST, $DOT_FILE"	; }
+        	FAILED_FILE_LIST="$FAILED_FILE_LIST $DOT_FILE"	; }
     fi
   done
   echo "All dotfiles: $DOT_FILE_COUNTER."
   if [ $FAILED_COUNTER -gt 0 ] ; then 
-    echo "Backup failed: $FAILED_COUNTER($FAILED_FILE_LIST)."
+	  echo "$FAILED_COUNTER file(s) failed on backup: $FAILED_FILE_LIST."
   fi
 }
