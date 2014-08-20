@@ -17,7 +17,7 @@ fi
         DOT_FILE_COUNTER=$(($DOT_FILE_COUNTER+1))
     	cp "$DOT_FILE" "./$BACKUP_DIR_NAME" >/dev/null 2>&1  || \
 		{ FAILED_COUNTER=$(($FAILED_COUNTER+1))         \
-        	FAILED_FILE_LIST="$FAILED_FILE_LIST $DOT_FILE"	; }
+        	FAILED_FILE_LIST="$FAILED_FILE_LIST, $DOT_FILE"	; }
     fi
   done
   echo "All dotfiles: $DOT_FILE_COUNTER."
