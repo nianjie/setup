@@ -26,7 +26,7 @@ echo "You will be prompted for your password by sudo."
 sudo -k
 
 # run inside sudo
-sudo VARIABLE_NAME_LIST="http_proxy ftp_proxy https_proxy" sh -xv <<"SCRIPT"
+sudo VARIABLE_NAME_LIST="http_proxy ftp_proxy https_proxy" sh <<"SCRIPT"
   V_NAME=
   PROXY_FLG=
 
