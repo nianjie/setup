@@ -53,7 +53,7 @@ git clone https://github.com/nianjie/dotfiles.git
 (
 cd dotfiles
 V_ENABLE_PROXY=$(git tag -l | grep -c v_enable-proxy)
-if [ ${V_ENABLE_PROXY} -eq 1 ] ; then
+if [ ${V_ENABLE_PROXY} -ge 1 ] ; then
    git checkout v_enable-proxy
 fi
 )
