@@ -26,10 +26,13 @@ sudo apt-get install -y rlwrap
 # making *_proxy environment variables available for scripts 
 # that are invoked through command sudo, because which remove 
 # almost all of environment variables.
+
+# Replace cassou with ubuntu-elisp as the former is deprecated.
+# https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa
 if [ -f ./setup/enableproxy.sh ]; then 
     . ./setup/enableproxy.sh
 fi
-sudo add-apt-repository -y ppa:cassou/emacs
+sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
